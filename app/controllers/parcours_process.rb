@@ -11,6 +11,14 @@ class Poi
     end
   end
 
+  def coordonnees
+    mycoord = []
+
+    @poi.each do |n|
+      mycoord << "#{n.lat},#{n.lng}"
+    end
+    return mycoord
+  end
 
   def monparcours(arrListe)
 # WORKING ON THIS
@@ -34,7 +42,7 @@ class Poi
 
   # calcul du zoom Maps
   def zoom
-  end  
+  end
 
 end
 
@@ -48,8 +56,8 @@ class CSVReader
     @txt   = txt.to_s
   end
 
-  def to_s
-    "#{@index}: #{@lat}, #{@lng} :: #{@txt}"
-  end
+#  def to_s
+#    "#{@index}: #{@lat}, #{@lng} :: #{@txt}"
+#  end
 
 end

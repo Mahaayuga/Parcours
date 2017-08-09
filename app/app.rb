@@ -21,9 +21,9 @@ get '/' do
   s07 = [48.934868,2.009963]
   s08 = [48.933939,2.010914]
 
-  slim :map, locals: {     point0: origin,
+  slim :map, locals: { my_api_key: key,
+                           point0: origin,
                              zoom: 15,
-                       my_api_key: key,
                               s01: s01,
                               s02: s02,
                               s03: s03,
@@ -32,5 +32,13 @@ get '/' do
                               s06: s06,
                               s07: s07,
                               s08: s08        }
+
+end
+
+get '/all' do
+# Not working yet
+  slim :all, locals: { my_api_key: key,
+                             zoom: 15,
+                              all: poi        }
 
 end

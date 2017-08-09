@@ -18,5 +18,7 @@ poi.mise_en_memoire("../db/db_poi.csv")
 #p origin[:lat] , origin[:lng]
 
 #test collecte des points
-run = [0,1,3]
-puts poi.monparcours(run)
+#run = [0,1,3]
+#puts poi.monparcours(run)
+
+puts poi.coordonnees
