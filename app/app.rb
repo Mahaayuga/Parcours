@@ -38,7 +38,7 @@ end
 get '/all' do
 # Not working yet
   slim :all, locals: { my_api_key: key,
-                             zoom: 15,
+                             zoom: 14,
                               all: poi        }
 
 end
