@@ -9,6 +9,9 @@ poi.mise_en_memoire("../db/db_poi.csv")
 #chargement de la licence Maps
 key = IO.read("../key")
 
+#style de carte
+map_css = IO.read("./public/css/map.css")
+
 get '/' do
 
   origin = {lat: 48.938127,lng: 2.008509}
@@ -37,8 +40,13 @@ end
 
 get '/all' do
 # Not working yet
+
+
+
   slim :all, locals: { my_api_key: key,
+                       my_api_css: map_css,
                              zoom: 14,
-                              all: poi        }
+                              all: poi.coordonnees
+                     }
 
 end

@@ -13,9 +13,12 @@ class Poi
 
   def coordonnees
     mycoord = []
+    i = 0
 
+#   @poi.each do |n|
     @poi.each do |n|
-      mycoord << "#{n.lat},#{n.lng}"
+      mycoord[i] = [n.lat, n.lng]
+      i += 1
     end
     return mycoord
   end

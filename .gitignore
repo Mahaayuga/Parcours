@@ -1,2 +1,6 @@
 #ignore GoogleMaps API key
 key
+
+#ignore test files
+db/db_poi_test.csv
+app/views/all.slim.bkp

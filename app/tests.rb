@@ -2,13 +2,13 @@ require_relative 'controllers/parcours_process'
 
 #chargement des poi
 poi = Poi.new
-poi.mise_en_memoire("../db/db_poi.csv")
+poi.mise_en_memoire("../db/db_poi_test.csv")
 
 #poi.liste
 
 #Test de récupération d'un text
-#ghostkey = KeyLoad.new
-#puts ghostkey.loadkey("../key")
+ghostkey = IO.read("./public/css/map.css")
+puts ghostkey
 
 #test d'un calcul de moyenne
 #mescoord = [50, 48, 51, 45]
@@ -21,4 +21,15 @@ poi.mise_en_memoire("../db/db_poi.csv")
 #run = [0,1,3]
 #puts poi.monparcours(run)
 
-puts poi.coordonnees
+
+#print poi.coordonnees[0]
+
+# 0.upto(poi.coordonnees.length-1) do |n|
+#   print "#{poi.coordonnees.at(n)},\n"
+# end
+
+#print poi.coordonnees
+#print poi.coordonnees.class
+
+
+print "\n"
