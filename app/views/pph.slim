@@ -1,7 +1,8 @@
-div#map style="width:720px;height:1300px;"
+div#map style="width:100%;height:700px"
 
 javascript:
-  function myMap() {
+  function initMap() {
+    var origin = new google.maps.LatLng(48.936441, 2.019553)
 
     var a0 = new google.maps.LatLng(48.942286,2.011912);
     var a1 = new google.maps.LatLng(48.941966,2.010703);
@@ -173,35 +174,183 @@ javascript:
     var a167 = new google.maps.LatLng(48.933243,2.017409);
     var a168 = new google.maps.LatLng(48.933310,2.016242);
 
-    var origin = new google.maps.LatLng(48.936619,2.0208480)
+    var styledMapType = new google.maps.StyledMapType(#{{ my_api_css }},
+      {name: 'Styled Map'});
 
-    var styledMapType = new google.maps.StyledMapType(#{{ my_api_css }}, {name: 'Styled Map'});
+    var color = "#c4bc9e" // "#046380"
 
-
-    var mapOptions = {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: #{zoom},
       center: origin,
-      zoom: #{zoom.to_i},
       mapTypeControlOptions: {mapTypeIds: "off"},
       mapTypeControl: true
-    };
-
-    var map = new google.maps.Map(document.getElementById('map'),mapOptions);
+    });
 
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
 
-    var runPath1 = new google.maps.Polyline({
-      path: [a0, a1, a83, a82, a81, a80, a79, a78, a77, a76, a75, a74, a73, a72, a71,  a68, a67,
-             a66, a65, a64, a63, a62, a61, a60, a59, a58, a57, a56, a156, a155, a154, a153,
-             a152, a151, a150, a147, a144, a36, a35, a34, a33, a32, a31, a30, a29, a28, a27,
-             a26, a25, a24, a23, a22, a21, a20, a118, a119, a120, a121, a122, a123, a124, a125,
-             a126, a127, a128, a129, a130, a131, a82, a83, a1 ],
-      strokeColor: "#046380",
+    var perimetrie = new google.maps.Polyline({
+      path: [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
+             a11, a12, a13, a14, a15, a16, a17, a18, a19, a20,
+             a21, a22, a23, a24, a25, a26, a27, a28, a29, a30,
+             a31, a32, a33, a34, a35, a36,
+             a144,
+             a44, a45, a46, a47, a48, a49, a50, a51, a52, a53,
+             a54, a55, a56, a57, a58, a59, a60, a61, a62, a63,
+             a64, a65, a66, a67, a68, a69, a70,
+             a75, a76, a77, a78, a79, a80, a81, a82, a83, a1   ],
+      strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
-    runPath1.setMap(map);
+    var vieilleFerme = new google.maps.Polyline({
+      path: [a8, a88, a89, a90, a91, a92, a93, a96 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path1 = new google.maps.Polyline({
+      path: [a9, a94, a95, a96, a97, a98, a99, a78 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path2 = new google.maps.Polyline({
+      path: [ a20, a118, a119, a120, a121, a122, a123, a124,
+              a125, a126, a127, a128, a129, a130, a131, a132, a2 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path3 = new google.maps.Polyline({
+      path: [ a120, a133, a134, a135, a136, a98 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+   var pontonSeine = new google.maps.Polyline({
+     path: [ a16, a100, a101, a102, a18 ],
+     strokeColor: color,
+     strokeOpacity: 1,
+     strokeWeight: 4
+   });
+
+   var maisonInsectes = new google.maps.Polyline({
+     path: [ a68, a71, a72, a73, a74, a75 ],
+     strokeColor: color,
+     strokeOpacity: 1,
+     strokeWeight: 4
+    });
+
+    var observatoire = new google.maps.Polyline({
+      path: [ a22, a84, a85, a86, a87, a65 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var obsSeine = new google.maps.Polyline({
+      path: [ a84, a103, a104, a105, a106, a24 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path4 = new google.maps.Polyline({
+      path: [ a14, a107, a108, a109, a110, a111, a73, a70 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var mare = new google.maps.Polyline({
+      path: [ a108, a112, a113, a114, a115, a116, a117, a121  ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path5 = new google.maps.Polyline({
+      path: [ a35, a137, a138, a139, a140, a141, a142, a143, a150, a149, a47  ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var pathButte = new google.maps.Polyline({
+      path: [ a144, a145, a146, a147, a143  ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path6 = new google.maps.Polyline({
+      path: [ a140, a144 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var path7 = new google.maps.Polyline({
+      path: [ a148, a49, a48, a148, a149 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var galiotte = new google.maps.Polyline({
+      path: [ a150, a151, a152, a153, a154, a155, a156, a157,
+              a158, a159, a160, a161, a162, a163, a164, a165,
+              a166, a167, a168, a84, a21 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var pathA = new google.maps.Polyline({
+      path: [ a156, a56 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var pathB = new google.maps.Polyline({
+      path: [ a159, a58 ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    perimetrie.setMap(map);
+    vieilleFerme.setMap(map);
+    path1.setMap(map);
+    path2.setMap(map);
+    path3.setMap(map);
+    pontonSeine.setMap(map);
+    maisonInsectes.setMap(map);
+    observatoire.setMap(map);
+    obsSeine.setMap(map);
+    path4.setMap(map);
+    mare.setMap(map);
+    path5.setMap(map);
+    pathButte.setMap(map);
+    path6.setMap(map);
+    path7.setMap(map);
+    galiotte.setMap(map);
+    pathA.setMap(map);
+    pathB.setMap(map);
+
   }
 
-<script src="https://maps.googleapis.com/maps/api/js?key=#{my_api_key}&callback=myMap"></script>
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=#{my_api_key}&callback=initMap"></script>
