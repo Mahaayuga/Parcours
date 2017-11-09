@@ -15,7 +15,6 @@ class Poi
     mycoord = []
     i = 0
 
-#   @poi.each do |n|
     @poi.each do |n|
       mycoord[i] = [n.lat, n.lng]
       i += 1
@@ -24,17 +23,28 @@ class Poi
   end
 
   def monparcours(arrListe)
-# WORKING ON THIS
-    mylat = []
-    mylng = []
+    itineraire = ''
 
     arrListe.each do |n|
-      mylat << @poi[n].lat
-      mylng << @poi[n].lng
+      itineraire += "{lat: #{@poi[n].lat}, lng: #{@poi[n].lng}},\n"
+    end
+    itineraire = itineraire.slice(0, itineraire.length - 2)
+  end
+
+  # calcul du cadre
+  def moncadre(arrListe)
+    perimetre = { nord: nil,   sud: nil,
+                   est: nil, ouest: nil  }
+
+    arrListe.each do |n|
+      perimetre[:nord]  = @poi[n].lat if perimetre[:nord].nil?  || perimetre[:nord]  < @poi[n].lat
+      perimetre[:ouest] = @poi[n].lng if perimetre[:ouest].nil? || perimetre[:ouest] < @poi[n].lng
+      perimetre[:sud]   = @poi[n].lat if perimetre[:sud].nil?   || perimetre[:sud]   > @poi[n].lat
+      perimetre[:est]   = @poi[n].lng if perimetre[:est].nil?   || perimetre[:est]   > @poi[n].lng
     end
 
-    puts mylat
-    puts mylng
+    return pointzero = { lat: gravite([perimetre[:nord],  perimetre[:sud]]),
+                         lng: gravite([perimetre[:ouest], perimetre[:est]])  }
 
   end
 
@@ -58,9 +68,5 @@ class CSVReader
     @lng   = lng.to_f
     @txt   = txt.to_s
   end
-
-#  def to_s
-#    "#{@index}: #{@lat}, #{@lng} :: #{@txt}"
-#  end
 
 end

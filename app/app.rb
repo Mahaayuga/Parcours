@@ -14,14 +14,16 @@ map_css = IO.read("./public/css/map.css")
 
 get '/' do
 
-  origin = {lat: 48.938127,lng: 2.008509}
+  un_test = 173.upto(198).to_a
+
+  origin = {lat: poi.moncadre(un_test)[:lat],
+            lng: poi.moncadre(un_test)[:lng]  }
 
   slim :map, locals: { my_api_key: key,
                        my_api_css: map_css,
+                           origin: origin,
                              zoom: 15,
-                              all: poi.coordonnees
-       }
-
+                mon_joli_parcours: poi.monparcours(un_test)  }
 end
 
 get '/all' do
@@ -29,8 +31,7 @@ get '/all' do
   slim :all, locals: { my_api_key: key,
                        my_api_css: map_css,
                              zoom: 14,
-                              all: poi.coordonnees
-                     }
+                              all: poi.coordonnees  }
 end
 
 get '/pph' do
@@ -38,6 +39,5 @@ get '/pph' do
   slim :pph, locals: { my_api_key: key,
                        my_api_css: map_css,
                              zoom: 15,
-                              all: poi.coordonnees
-                     }
+                              all: poi.coordonnees  }
 end
