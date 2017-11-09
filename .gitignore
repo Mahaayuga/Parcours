@@ -4,3 +4,4 @@ key
 #ignore test files
 db/db_poi_test.csv
 app/views/all.slim.bkp
+app/controllers/tmp
