@@ -1,187 +1,16 @@
-div#map style="width:100%;height:700px"
+div#map style="width:100%;height:900px"
 
 javascript:
   function initMap() {
-    var origin = new google.maps.LatLng(48.936441, 2.019553)
-
-    var a0 = new google.maps.LatLng(48.942286,2.011912);
-    var a1 = new google.maps.LatLng(48.941966,2.010703);
-    var a2 = new google.maps.LatLng(48.941941,2.010470);
-    var a3 = new google.maps.LatLng(48.941691,2.008384);
-    var a4 = new google.maps.LatLng(48.941484,2.006356);
-    var a5 = new google.maps.LatLng(48.941334,2.005154);
-    var a6 = new google.maps.LatLng(48.941129,2.004824);
-    var a7 = new google.maps.LatLng(48.939622,2.005587);
-    var a8 = new google.maps.LatLng(48.937915,2.006886);
-    var a9 = new google.maps.LatLng(48.937054,2.007394);
-    var a10 = new google.maps.LatLng(48.936541,2.007908);
-    var a11 = new google.maps.LatLng(48.936182,2.008189);
-    var a12 = new google.maps.LatLng(48.935275,2.009234);
-    var a13 = new google.maps.LatLng(48.934919,2.009790);
-    var a14 = new google.maps.LatLng(48.934868,2.009963);
-    var a15 = new google.maps.LatLng(48.934659,2.010148);
-    var a16 = new google.maps.LatLng(48.934415,2.010307);
-    var a17 = new google.maps.LatLng(48.933939,2.010914);
-    var a18 = new google.maps.LatLng(48.933867,2.011882);
-    var a19 = new google.maps.LatLng(48.933621,2.012183);
-    var a20 = new google.maps.LatLng(48.933629,2.012758);
-    var a21 = new google.maps.LatLng(48.933611,2.013064);
-    var a22 = new google.maps.LatLng(48.933245,2.013409);
-    var a23 = new google.maps.LatLng(48.932366,2.014194);
-    var a24 = new google.maps.LatLng(48.932224,2.014674);
-    var a25 = new google.maps.LatLng(48.931801,2.016632);
-    var a26 = new google.maps.LatLng(48.931192,2.018855);
-    var a27 = new google.maps.LatLng(48.931126,2.019767);
-    var a28 = new google.maps.LatLng(48.930915,2.021011);
-    var a29 = new google.maps.LatLng(48.930928,2.022388);
-    var a30 = new google.maps.LatLng(48.931022,2.023902);
-    var a31 = new google.maps.LatLng(48.931283,2.025317);
-    var a32 = new google.maps.LatLng(48.931716,2.026471);
-    var a33 = new google.maps.LatLng(48.932553,2.028160);
-    var a34 = new google.maps.LatLng(48.933629,2.030287);
-    var a35 = new google.maps.LatLng(48.933892,2.031066);
-    var a36 = new google.maps.LatLng(48.934630,2.033537);
-    var a37 = new google.maps.LatLng(48.934846,2.034073);
-    var a38 = new google.maps.LatLng(48.935149,2.034856);
-    var a39 = new google.maps.LatLng(48.935442,2.035449);
-    var a40 = new google.maps.LatLng(48.935848,2.036108);
-    var a41 = new google.maps.LatLng(48.936263,2.036774);
-    var a42 = new google.maps.LatLng(48.936928,2.035523);
-    var a43 = new google.maps.LatLng(48.936132,2.034408);
-    var a44 = new google.maps.LatLng(48.936028,2.034282);
-    var a45 = new google.maps.LatLng(48.936327,2.033913);
-    var a46 = new google.maps.LatLng(48.936937,2.033286);
-    var a47 = new google.maps.LatLng(48.937259,2.032665);
-    var a48 = new google.maps.LatLng(48.937705,2.032122);
-    var a49 = new google.maps.LatLng(48.938162,2.031857);
-    var a50 = new google.maps.LatLng(48.938662,2.031806);
-    var a51 = new google.maps.LatLng(48.938365,2.030493);
-    var a52 = new google.maps.LatLng(48.937915,2.028395);
-    var a53 = new google.maps.LatLng(48.937884,2.026905);
-    var a54 = new google.maps.LatLng(48.937477,2.025786);
-    var a55 = new google.maps.LatLng(48.937227,2.025390);
-    var a56 = new google.maps.LatLng(48.937075,2.025629);
-    var a57 = new google.maps.LatLng(48.936831,2.025025);
-    var a58 = new google.maps.LatLng(48.935935,2.023237);
-    var a59 = new google.maps.LatLng(48.935883,2.022727);
-    var a60 = new google.maps.LatLng(48.935220,2.021019);
-    var a61 = new google.maps.LatLng(48.935046,2.020129);
-    var a62 = new google.maps.LatLng(48.934810,2.019849);
-    var a63 = new google.maps.LatLng(48.934653,2.019022);
-    var a64 = new google.maps.LatLng(48.934292,2.018247);
-    var a65 = new google.maps.LatLng(48.934420,2.017569);
-    var a66 = new google.maps.LatLng(48.934581,2.017349);
-    var a67 = new google.maps.LatLng(48.934764,2.016861);
-    var a68 = new google.maps.LatLng(48.935482,2.015683);
-    var a69 = new google.maps.LatLng(48.935880,2.015063);
-    var a70 = new google.maps.LatLng(48.936095,2.014313);
-    var a71 = new google.maps.LatLng(48.935420,2.014374);
-    var a72 = new google.maps.LatLng(48.935770,2.013942);
-    var a73 = new google.maps.LatLng(48.936035,2.013887);
-    var a74 = new google.maps.LatLng(48.936345,2.013803);
-    var a75 = new google.maps.LatLng(48.936728,2.014019);
-    var a76 = new google.maps.LatLng(48.937946,2.013116);
-    var a77 = new google.maps.LatLng(48.938171,2.013153);
-    var a78 = new google.maps.LatLng(48.938504,2.012777);
-    var a79 = new google.maps.LatLng(48.938723,2.012555);
-    var a80 = new google.maps.LatLng(48.938966,2.012638);
-    var a81 = new google.maps.LatLng(48.939565,2.012129);
-    var a82 = new google.maps.LatLng(48.940637,2.011162);
-    var a83 = new google.maps.LatLng(48.941484,2.010824);
-    var a84 = new google.maps.LatLng(48.933619,2.014801);
-    var a85 = new google.maps.LatLng(48.933833,2.015574);
-    var a86 = new google.maps.LatLng(48.934222,2.016921);
-    var a87 = new google.maps.LatLng(48.934313,2.017391);
-    var a88 = new google.maps.LatLng(48.938071,2.007569);
-    var a89 = new google.maps.LatLng(48.938197,2.008006);
-    var a90 = new google.maps.LatLng(48.938301,2.009049);
-    var a91 = new google.maps.LatLng(48.938124,2.009397);
-    var a92 = new google.maps.LatLng(48.937951,2.009824);
-    var a93 = new google.maps.LatLng(48.937987,2.010195);
-    var a94 = new google.maps.LatLng(48.937296,2.007817);
-    var a95 = new google.maps.LatLng(48.937525,2.008596);
-    var a96 = new google.maps.LatLng(48.938000,2.010470);
-    var a97 = new google.maps.LatLng(48.938202,2.011339);
-    var a98 = new google.maps.LatLng(48.938426,2.012276);
-    var a99 = new google.maps.LatLng(48.938461,2.012531);
-    var a100 = new google.maps.LatLng(48.934415,2.010734);
-    var a101 = new google.maps.LatLng(48.934220,2.011373);
-    var a102 = new google.maps.LatLng(48.934005,2.011661);
-    var a103 = new google.maps.LatLng(48.933492,2.014930);
-    var a104 = new google.maps.LatLng(48.933093,2.015024);
-    var a105 = new google.maps.LatLng(48.932905,2.015027);
-    var a106 = new google.maps.LatLng(48.932539,2.014820);
-    var a107 = new google.maps.LatLng(48.935035,2.010453);
-    var a108 = new google.maps.LatLng(48.935147,2.011108);
-    var a109 = new google.maps.LatLng(48.935358,2.011631);
-    var a110 = new google.maps.LatLng(48.935820,2.012316);
-    var a111 = new google.maps.LatLng(48.935870,2.012480);
-    var a112 = new google.maps.LatLng(48.935499,2.011142);
-    var a113 = new google.maps.LatLng(48.935904,2.011142);
-    var a114 = new google.maps.LatLng(48.936165,2.010962);
-    var a115 = new google.maps.LatLng(48.936391,2.011306);
-    var a116 = new google.maps.LatLng(48.936504,2.011470);
-    var a117 = new google.maps.LatLng(48.936687,2.011380);
-    var a118 = new google.maps.LatLng(48.934337,2.012468);
-    var a119 = new google.maps.LatLng(48.935567,2.011982);
-    var a120 = new google.maps.LatLng(48.936326,2.011659);
-    var a121 = new google.maps.LatLng(48.936731,2.011477);
-    var a122 = new google.maps.LatLng(48.937234,2.011333);
-    var a123 = new google.maps.LatLng(48.937712,2.011255);
-    var a124 = new google.maps.LatLng(48.938091,2.011117);
-    var a125 = new google.maps.LatLng(48.938212,2.011151);
-    var a126 = new google.maps.LatLng(48.938886,2.011504);
-    var a127 = new google.maps.LatLng(48.939345,2.011739);
-    var a128 = new google.maps.LatLng(48.939491,2.011719);
-    var a129 = new google.maps.LatLng(48.939765,2.011470);
-    var a130 = new google.maps.LatLng(48.940558,2.010844);
-    var a131 = new google.maps.LatLng(48.940906,2.010829);
-    var a132 = new google.maps.LatLng(48.941717,2.010541);
-    var a133 = new google.maps.LatLng(48.937133,2.011860);
-    var a134 = new google.maps.LatLng(48.937486,2.011932);
-    var a135 = new google.maps.LatLng(48.937965,2.012250);
-    var a136 = new google.maps.LatLng(48.938366,2.012272);
-    var a137 = new google.maps.LatLng(48.934269,2.030628);
-    var a138 = new google.maps.LatLng(48.934554,2.030675);
-    var a139 = new google.maps.LatLng(48.934840,2.031133);
-    var a140 = new google.maps.LatLng(48.935155,2.031277);
-    var a141 = new google.maps.LatLng(48.935587,2.031275);
-    var a142 = new google.maps.LatLng(48.935920,2.031257);
-    var a143 = new google.maps.LatLng(48.936392,2.031303);
-    var a144 = new google.maps.LatLng(48.935247,2.032761);
-    var a145 = new google.maps.LatLng(48.935436,2.032329);
-    var a146 = new google.maps.LatLng(48.935754,2.031992);
-    var a147 = new google.maps.LatLng(48.935972,2.031579);
-    var a148 = new google.maps.LatLng(48.937542,2.031522);
-    var a149 = new google.maps.LatLng(48.936702,2.031348);
-    var a150 = new google.maps.LatLng(48.936536,2.031277);
-    var a151 = new google.maps.LatLng(48.936563,2.030709);
-    var a152 = new google.maps.LatLng(48.936524,2.029911);
-    var a153 = new google.maps.LatLng(48.936615,2.028812);
-    var a154 = new google.maps.LatLng(48.936541,2.028231);
-    var a155 = new google.maps.LatLng(48.936371,2.027686);
-    var a156 = new google.maps.LatLng(48.936122,2.027204);
-    var a157 = new google.maps.LatLng(48.935538,2.026192);
-    var a158 = new google.maps.LatLng(48.935114,2.025228);
-    var a159 = new google.maps.LatLng(48.934813,2.024665);
-    var a160 = new google.maps.LatLng(48.934555,2.024113);
-    var a161 = new google.maps.LatLng(48.934455,2.023616);
-    var a162 = new google.maps.LatLng(48.934241,2.023097);
-    var a163 = new google.maps.LatLng(48.933879,2.022076);
-    var a164 = new google.maps.LatLng(48.933937,2.021419);
-    var a165 = new google.maps.LatLng(48.933937,2.021167);
-    var a166 = new google.maps.LatLng(48.933850,2.020683);
-    var a167 = new google.maps.LatLng(48.933243,2.017409);
-    var a168 = new google.maps.LatLng(48.933310,2.016242);
 
     var styledMapType = new google.maps.StyledMapType(#{{ my_api_css }},
       {name: 'Styled Map'});
 
-    var color = "#c4bc9e" // "#046380"
+    var color = "#85bd33"
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: #{zoom},
-      center: origin,
+      zoom: #{zoom.to_i},
+      center: { lat: #{origin[:lat]}, lng: #{origin[:lng]} },
       mapTypeControlOptions: {mapTypeIds: "off"},
       mapTypeControl: true
     });
@@ -190,137 +19,91 @@ javascript:
     map.setMapTypeId('styled_map');
 
     var perimetrie = new google.maps.Polyline({
-      path: [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
-             a11, a12, a13, a14, a15, a16, a17, a18, a19, a20,
-             a21, a22, a23, a24, a25, a26, a27, a28, a29, a30,
-             a31, a32, a33, a34, a35, a36,
-             a144,
-             a44, a45, a46, a47, a48, a49, a50, a51, a52, a53,
-             a54, a55, a56, a57, a58, a59, a60, a61, a62, a63,
-             a64, a65, a66, a67, a68, a69, a70,
-             a75, a76, a77, a78, a79, a80, a81, a82, a83, a1   ],
+      path: [ #{{ perimetrie }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var vieilleFerme = new google.maps.Polyline({
-      path: [a8, a88, a89, a90, a91, a92, a93, a96 ],
+      path: [ #{{ vieilleFerme }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var path1 = new google.maps.Polyline({
-      path: [a9, a94, a95, a96, a97, a98, a99, a78 ],
+      path: [ #{{ path1 }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var path2 = new google.maps.Polyline({
-      path: [ a20, a118, a119, a120, a121, a122, a123, a124,
-              a125, a126, a127, a128, a129, a130, a131, a132, a2 ],
+      path: [ #{{ path2 }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var path3 = new google.maps.Polyline({
-      path: [ a120, a133, a134, a135, a136, a98 ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-   var pontonSeine = new google.maps.Polyline({
-     path: [ a16, a100, a101, a102, a18 ],
-     strokeColor: color,
-     strokeOpacity: 1,
-     strokeWeight: 4
-   });
-
-   var maisonInsectes = new google.maps.Polyline({
-     path: [ a68, a71, a72, a73, a74, a75 ],
-     strokeColor: color,
-     strokeOpacity: 1,
-     strokeWeight: 4
-    });
-
-    var observatoire = new google.maps.Polyline({
-      path: [ a22, a84, a85, a86, a87, a65 ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-    var obsSeine = new google.maps.Polyline({
-      path: [ a84, a103, a104, a105, a106, a24 ],
+      path: [ #{{ path3 }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var path4 = new google.maps.Polyline({
-      path: [ a14, a107, a108, a109, a110, a111, a73, a70 ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-    var mare = new google.maps.Polyline({
-      path: [ a108, a112, a113, a114, a115, a116, a117, a121  ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-    var path5 = new google.maps.Polyline({
-      path: [ a35, a137, a138, a139, a140, a141, a142, a143, a150, a149, a47  ],
+      path: [ #{{ path4 }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var pathButte = new google.maps.Polyline({
-      path: [ a144, a145, a146, a147, a143  ],
+      path: [ #{{ pathButte }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
-    var path6 = new google.maps.Polyline({
-      path: [ a140, a144 ],
+    var pathABCD = new google.maps.Polyline({
+      path: [ #{{ pathABCD }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
-    var path7 = new google.maps.Polyline({
-      path: [ a148, a49, a48, a148, a149 ],
+    var mare = new google.maps.Polyline({
+      path: [ #{{ mare }} ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var pontonSeine = new google.maps.Polyline({
+      path: [ #{{ pontonSeine }} ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var maisonInsectes = new google.maps.Polyline({
+      path: [ #{{ maisonInsectes }} ],
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 4
+    });
+
+    var observatoire = new google.maps.Polyline({
+      path: [ #{{ observatoire }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
     });
 
     var galiotte = new google.maps.Polyline({
-      path: [ a150, a151, a152, a153, a154, a155, a156, a157,
-              a158, a159, a160, a161, a162, a163, a164, a165,
-              a166, a167, a168, a84, a21 ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-    var pathA = new google.maps.Polyline({
-      path: [ a156, a56 ],
-      strokeColor: color,
-      strokeOpacity: 1,
-      strokeWeight: 4
-    });
-
-    var pathB = new google.maps.Polyline({
-      path: [ a159, a58 ],
+      path: [ #{{ galiotte }} ],
       strokeColor: color,
       strokeOpacity: 1,
       strokeWeight: 4
@@ -331,26 +114,14 @@ javascript:
     path1.setMap(map);
     path2.setMap(map);
     path3.setMap(map);
+    path4.setMap(map);
+    pathButte.setMap(map);
+    pathABCD.setMap(map);
+    mare.setMap(map);
     pontonSeine.setMap(map);
     maisonInsectes.setMap(map);
     observatoire.setMap(map);
-    obsSeine.setMap(map);
-    path4.setMap(map);
-    mare.setMap(map);
-    path5.setMap(map);
-    pathButte.setMap(map);
-    path6.setMap(map);
-    path7.setMap(map);
     galiotte.setMap(map);
-    pathA.setMap(map);
-    pathB.setMap(map);
-
   }
-
-
-
-
-
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=#{my_api_key}&callback=initMap"></script>

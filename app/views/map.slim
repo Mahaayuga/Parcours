@@ -1,4 +1,4 @@
-div#map style="width:720px;height:1028px;"
+div#map style="width:720px;height:1000px;"
 
 javascript:
   function myMap() {
@@ -17,10 +17,8 @@ javascript:
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
 
-    var parcours = [ #{{ mon_joli_parcours }} ]
-
     var runningPath = new google.maps.Polyline({
-      path: parcours,
+      path: [ #{{ mon_joli_parcours }} ],
       strokeColor: "#046380",
       strokeOpacity: 1,
       strokeWeight: 4

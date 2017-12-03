@@ -1,4 +1,4 @@
-div#map style="width:100%;height:600px"
+div#map style="width:100%;height:900px;"
 
 javascript:
 
@@ -8,11 +8,8 @@ javascript:
       {name: 'Styled Map'});
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: #{zoom},
-      center: {
-        lat: 48.941618,
-        lng:  2.025227
-      },
+      center: { lat: #{origin[:lat]}, lng: #{origin[:lng]} },
+      zoom: #{zoom.to_i},
       mapTypeControlOptions: {mapTypeIds: "off"}
     });
 

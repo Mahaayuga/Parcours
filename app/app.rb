@@ -14,30 +14,68 @@ map_css = IO.read("./public/css/map.css")
 
 get '/' do
 
-  un_test = 173.upto(198).to_a
+  seance = [0,1] + (75..83).to_a.reverse + (56..70).to_a.reverse + (150..156).to_a.reverse + (144..147).to_a.reverse + (36..41).to_a + (169..188).to_a + (169..187).to_a.reverse + (41..65).to_a + (84..87).to_a.reverse + [21, 20] + (118..121).to_a  + (133..136).to_a + [98, 99] + (79..83).to_a << 1
 
-  origin = {lat: poi.moncadre(un_test)[:lat],
-            lng: poi.moncadre(un_test)[:lng]  }
+  origin = {lat: poi.moncadre(seance)[:lat],
+            lng: poi.moncadre(seance)[:lng]  }
 
   slim :map, locals: { my_api_key: key,
                        my_api_css: map_css,
                            origin: origin,
-                             zoom: 15,
-                mon_joli_parcours: poi.monparcours(un_test)  }
+                             zoom: 14,
+                mon_joli_parcours: poi.monparcours(seance)  }
 end
 
 get '/all' do
 
+  tous = (0..198).to_a
+
+  origin = {lat: poi.moncadre(tous)[:lat],
+            lng: poi.moncadre(tous)[:lng]  }
+
   slim :all, locals: { my_api_key: key,
                        my_api_css: map_css,
-                             zoom: 14,
+                           origin: origin,
+                             zoom: 15,
                               all: poi.coordonnees  }
 end
 
 get '/pph' do
 
+  pph = (0..168).to_a
+
+  origin = {lat: poi.moncadre(pph)[:lat],
+            lng: poi.moncadre(pph)[:lng]  }
+
+  perimetrie     = (1..36).to_a + [144] + (44..70).to_a + (75..83).to_a << 1
+  vieilleFerme   = [8] + (88..93).to_a << 96
+  path1          = [9] + (94..99).to_a << 78
+  path2          = [20] + (118..132).to_a << 2
+  path3          = [14] + (107..111).to_a + [73, 70]
+  mare           = [108] + (112..117).to_a + [121] + (133..136).to_a << 98
+  pontonSeine    = [16, 100, 101, 102, 18]
+  maisonInsectes = [68] + (71..75).to_a
+  observatoire   = [84] + (103..106).to_a + [24, 23, 22] + (84..87).to_a << 65
+  path4          = [35] + (137..143).to_a + [150, 149, 148, 48, 49, 148]
+  pathButte      = [140] + (144..147).to_a << 143
+  galiotte       = (150..168).to_a + [84, 21]
+  pathABCD       = [156] + (56..58).to_a << 159
+
   slim :pph, locals: { my_api_key: key,
                        my_api_css: map_css,
-                             zoom: 15,
-                              all: poi.coordonnees  }
+                           origin: origin,
+                             zoom: 16,
+                       perimetrie: poi.monparcours(perimetrie),
+                     vieilleFerme: poi.monparcours(vieilleFerme),
+                            path1: poi.monparcours(path1),
+                            path2: poi.monparcours(path2),
+                            path3: poi.monparcours(path3),
+                            path4: poi.monparcours(path4),
+                             mare: poi.monparcours(mare),
+                      pontonSeine: poi.monparcours(pontonSeine),
+                   maisonInsectes: poi.monparcours(maisonInsectes),
+                     observatoire: poi.monparcours(observatoire),
+                        pathButte: poi.monparcours(pathButte),
+                         galiotte: poi.monparcours(galiotte),
+                         pathABCD: poi.monparcours(pathABCD)        }
 end
