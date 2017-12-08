@@ -14,7 +14,8 @@ map_css = IO.read("./public/css/map.css")
 
 get '/' do
 
-  seance = [0,1] + (75..83).to_a.reverse + (56..70).to_a.reverse + (150..156).to_a.reverse + (144..147).to_a.reverse + (36..41).to_a + (169..188).to_a + (169..187).to_a.reverse + (41..65).to_a + (84..87).to_a.reverse + [21, 20] + (118..121).to_a  + (133..136).to_a + [98, 99] + (79..83).to_a << 1
+  seance = [0..35,137..143,150..156,56..70,75..83,1]
+  seance = poi.decode(seance)
 
   origin = {lat: poi.moncadre(seance)[:lat],
             lng: poi.moncadre(seance)[:lng]  }

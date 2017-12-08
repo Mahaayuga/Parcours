@@ -18,11 +18,16 @@ poi.mise_en_memoire("../db/db_poi_test.csv")
 #p origin[:lat] , origin[:lng]
 
 #test collecte des points  ## IT COULD WORK
-run = 0.upto(5).to_a
+run = [0,1..3,155]
+run = poi.decode run
+
+printf "#{run}"
+
+=begin
 puts poi.monparcours(run)
 print "\n"
 puts poi.moncadre(run)
-
+=end
 
 #print poi.coordonnees[0]
 

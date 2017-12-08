@@ -28,8 +28,23 @@ class Poi
     arrListe.each do |n|
       itineraire += "{lat: #{@poi[n].lat}, lng: #{@poi[n].lng}},\n"
     end
-    itineraire = itineraire.slice(0, itineraire.length - 2)
+    itineraire = itineraire.chop.chop
   end
+
+  def decode(arrListe)
+    tab = []
+
+    arrListe.each do |n|
+      n = analyse n if n.is_a?(Range)
+      tab << n
+    end
+    return tab.flatten
+  end
+
+  def analyse(data)
+    t = data.to_s.split('..').map(&:to_i)
+    t[0] < t[1] ? (t[0]..t[1]).to_a : (t[1]..t[0]).to_a.reverse
+  end 
 
   # calcul du cadre
   def moncadre(arrListe)
