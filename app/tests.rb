@@ -2,8 +2,8 @@ require_relative 'controllers/parcours_process'
 
 #chargement des poi
 poi = Poi.new
-poi.mise_en_memoire("../db/db_poi_test.csv")
-
+#poi.mise_en_memoire("../db/db_poi_test.csv")
+poi.mise_en_memoire("../db/db_poi.csv")
 #poi.liste
 
 #Test de récupération d'un text
@@ -18,10 +18,12 @@ poi.mise_en_memoire("../db/db_poi_test.csv")
 #p origin[:lat] , origin[:lng]
 
 #test collecte des points  ## IT COULD WORK
-run = [0,1..3,155]
+run = [0,1,83..75,70..56,156..150,143,147..144,36..1]
 run = poi.decode run
 
-printf "#{run}"
+run_km = poi.distance run
+puts run_km
+
 
 =begin
 puts poi.monparcours(run)

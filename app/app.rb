@@ -14,8 +14,11 @@ map_css = IO.read("./public/css/map.css")
 
 get '/' do
 
-  seance = [0..35,137..143,150..156,56..70,75..83,1]
-  seance = poi.decode(seance)
+  seance = [0..9,94..99,78..71,68..41,169..197,196..169,41..20,118..121,133..136,98,99,79..83]
+  seance = poi.decode seance
+
+  km = poi.distance seance
+
 
   origin = {lat: poi.moncadre(seance)[:lat],
             lng: poi.moncadre(seance)[:lng]  }
@@ -24,6 +27,7 @@ get '/' do
                        my_api_css: map_css,
                            origin: origin,
                              zoom: 14,
+                               km: km,
                 mon_joli_parcours: poi.monparcours(seance)  }
 end
 

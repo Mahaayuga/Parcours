@@ -1,6 +1,10 @@
 require 'csv'
 
 class Poi
+  K_LAT = 2.557 / 0.023
+  K_LNG = 3.651 / 0.050
+
+
   def initialize
     @poi = []
   end
@@ -31,6 +35,7 @@ class Poi
     itineraire = itineraire.chop.chop
   end
 
+  #Simplification synthaxique
   def decode(arrListe)
     tab = []
 
@@ -44,7 +49,20 @@ class Poi
   def analyse(data)
     t = data.to_s.split('..').map(&:to_i)
     t[0] < t[1] ? (t[0]..t[1]).to_a : (t[1]..t[0]).to_a.reverse
-  end 
+  end
+
+  # Calcul de la distance
+  def distance(arrListe)
+    km = 0
+    arrListe.each_with_index do |val, index|
+      km += dist @poi[val], @poi[arrListe[index.next]] unless arrListe[index.next] == nil
+    end
+    return km.round(3)
+  end
+
+  def dist(a,b)
+    result = Math.sqrt( ((a.lat - b.lat).abs * K_LAT)**2 + ((a.lng - b.lng).abs * K_LNG)**2 )
+  end
 
   # calcul du cadre
   def moncadre(arrListe)
