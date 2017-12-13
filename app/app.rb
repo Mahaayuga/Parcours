@@ -52,19 +52,19 @@ get '/pph' do
   origin = {lat: poi.moncadre(pph)[:lat],
             lng: poi.moncadre(pph)[:lng]  }
 
-  perimetrie     = (1..36).to_a + [144] + (44..70).to_a + (75..83).to_a << 1
-  vieilleFerme   = [8] + (88..93).to_a << 96
-  path1          = [9] + (94..99).to_a << 78
-  path2          = [20] + (118..132).to_a << 2
-  path3          = [14] + (107..111).to_a + [73, 70]
-  mare           = [108] + (112..117).to_a + [121] + (133..136).to_a << 98
-  pontonSeine    = [16, 100, 101, 102, 18]
-  maisonInsectes = [68] + (71..75).to_a
-  observatoire   = [84] + (103..106).to_a + [24, 23, 22] + (84..87).to_a << 65
-  path4          = [35] + (137..143).to_a + [150, 149, 148, 48, 49, 148]
-  pathButte      = [140] + (144..147).to_a << 143
-  galiotte       = (150..168).to_a + [84, 21]
-  pathABCD       = [156] + (56..58).to_a << 159
+  perimetrie     = poi.decode [1..36,144,44..70,75..83,1]
+  vieilleFerme   = poi.decode [8,88..93,96]
+  path1          = poi.decode [9,94..99,78]
+  path2          = poi.decode [20,118..132,2]
+  path3          = poi.decode [14,107..111,73,70]
+  mare           = poi.decode [108,112..117,121,133..136,98]
+  pontonSeine    = poi.decode [16,100..102,18]
+  maisonInsectes = poi.decode [68,71..75]
+  observatoire   = poi.decode [84,103..106,24..22,84..87,65]
+  path4          = poi.decode [35,137..143,150..148,48,49,148]
+  pathButte      = poi.decode [140,144..147,143]
+  galiotte       = poi.decode [150..168,84,21]
+  pathABCD       = poi.decode [156,56..58,159]
 
   slim :pph, locals: { my_api_key: key,
                        my_api_css: map_css,
