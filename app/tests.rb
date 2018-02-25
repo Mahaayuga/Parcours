@@ -2,9 +2,7 @@ require_relative 'controllers/parcours_process'
 
 #chargement des poi
 poi = Poi.new
-#poi.mise_en_memoire("../db/db_poi_test.csv")
 poi.mise_en_memoire("../db/db_poi.csv")
-#poi.liste
 
 #Test de récupération d'un text
 #ghostkey = IO.read("./public/css/map.css")
@@ -18,7 +16,7 @@ poi.mise_en_memoire("../db/db_poi.csv")
 #p origin[:lat] , origin[:lng]
 
 #test collecte des points  ## IT COULD WORK
-run = [0,1,83..75,70..56,156..150,143,147..144,36..1]
+run = [0..16,100..102,18..35,137..143,150..156,56..70,75..83]
 run = poi.decode run
 
 run_km = poi.distance run
