@@ -16,7 +16,7 @@ poi.mise_en_memoire("../db/db_poi.csv")
 #p origin[:lat] , origin[:lng]
 
 #test collecte des points  ## IT COULD WORK
-run = [0..16,100..102,18..35,137..143,150..156,56..70,75..83]
+run = [0..21,84,103..106,24..35,137..143,150..159,58..70,75..83,1]
 run = poi.decode run
 
 run_km = poi.distance run
