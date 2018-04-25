@@ -10,6 +10,10 @@ javascript:
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: #{zoom.to_i},
+      zoomControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
       center: { lat: #{origin[:lat]}, lng: #{origin[:lng]} },
       mapTypeControlOptions: {mapTypeIds: "off"},
       mapTypeControl: true

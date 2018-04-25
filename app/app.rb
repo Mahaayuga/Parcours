@@ -14,7 +14,7 @@ map_css = IO.read("./public/css/map.css")
 
 get '/' do
 
-  seance = [1..16,100..102,18..36,144,140..143,150..156,56..68,71..73,111,110,119..132]
+  seance = [0]
   seance = poi.decode seance
 
   km = poi.distance seance
@@ -30,6 +30,25 @@ get '/' do
                                km: km,
                 mon_joli_parcours: poi.monparcours(seance)  }
 end
+
+post '/' do
+  seance =  params[:parcours]
+  seance = eval( seance )
+  seance = poi.decode seance
+
+  km = poi.distance seance
+
+  origin = {lat: poi.moncadre(seance)[:lat],
+            lng: poi.moncadre(seance)[:lng]  }
+
+  slim :map, locals: { my_api_key: key,
+                       my_api_css: map_css,
+                           origin: origin,
+                             zoom: 14,
+                               km: km,
+                mon_joli_parcours: poi.monparcours(seance)  }
+end
+
 
 get '/all' do
 

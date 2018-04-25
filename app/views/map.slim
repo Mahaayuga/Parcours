@@ -1,4 +1,9 @@
-div#map style="width:720px;height:970px;"
+form action="/" method="POST"
+    input type="text" name="parcours" autocomplete="no"
+    input.button type="submit" value="Draw it"
+
+p #{km}
+div#map style="height:930px;width:700px;"
 
 javascript:
   function myMap() {
@@ -8,8 +13,12 @@ javascript:
     var mapOptions = {
       center: { lat: #{origin[:lat]}, lng: #{origin[:lng]} },
       zoom: #{zoom.to_i},
+      zoomControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
       mapTypeControlOptions: {mapTypeIds: "off"},
-      mapTypeControl: true
+      mapTypeControl: false
     };
 
     var map = new google.maps.Map(document.getElementById('map'),mapOptions);
@@ -26,7 +35,5 @@ javascript:
 
     runningPath.setMap(map);
   }
-
-h2 #{km}
 
 <script src="https://maps.googleapis.com/maps/api/js?key=#{my_api_key}&callback=myMap"></script>
