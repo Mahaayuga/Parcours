@@ -24,7 +24,7 @@ get '/' do
             lng: poi.moncadre(seance)[:lng]  }
 
   slim :map, locals: { my_api_key: key,
-                       my_api_css: map_css,
+                       my_api_css: 'mapbox.light',
                            origin: origin,
                              zoom: 14,
                                km: km,
@@ -42,7 +42,7 @@ post '/' do
             lng: poi.moncadre(seance)[:lng]  }
 
   slim :map, locals: { my_api_key: key,
-                       my_api_css: map_css,
+                       my_api_css: 'mapbox.light',
                            origin: origin,
                              zoom: 14,
                                km: km,

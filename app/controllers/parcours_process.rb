@@ -30,7 +30,7 @@ class Poi
     itineraire = ''
 
     arrListe.each do |n|
-      itineraire += "{lat: #{@poi[n].lat}, lng: #{@poi[n].lng}},\n"
+      itineraire += "[#{@poi[n].lat}, #{@poi[n].lng}],\n"
     end
     itineraire = itineraire.chop.chop
   end
