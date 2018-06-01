@@ -11,7 +11,7 @@ class Poi
 
   def mise_en_memoire(csv_file_name)
     CSV.foreach(csv_file_name) do |row|
-      @poi << CSVReader.new(row[0], row[1], row[2], row[3])
+      @poi << CSVReader.new(row[0], row[1], row[2], row[3], row[4])
     end
   end
 
@@ -93,12 +93,13 @@ class Poi
 end
 
 class CSVReader
-  attr_reader :index, :lat, :lng, :txt
+  attr_reader :index, :lat, :lng, :alt, :txt
 
-  def initialize (index, lat, lng, txt)
+  def initialize (index, lat, lng, alt, txt)
     @index = index.to_i
     @lat   = lat.to_f
     @lng   = lng.to_f
+    @alt   = alt.to_f
     @txt   = txt.to_s
   end
 
